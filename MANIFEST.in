@@ -1,0 +1,24 @@
+# Manifest syntax https://docs.python.org/3/distutils/sourcedist.html
+# include all files under dir
+graft wheelhouse
+
+recursive-exclude __pycache__  *.pyc *.pyo *.orig
+
+include *.js*
+exclude *.git*
+exclude *.coveragerc
+include *.sh
+exclude proc*
+exclude pylint*
+include README*
+graft assembly
+
+include requirements*.*
+exclude requirements-dev.*
+include *.py
+
+# exclude all files under dir
+prune .git
+prune venv
+prune test*
+prune example
